@@ -105,26 +105,29 @@
   
   #Bread{
     display: grid;
-    grid-template-columns: repeat(6, 300px);
+    grid-template-columns: repeat(6, 320px);
     gap: 30px;
     justify-content: left;
     overflow: scroll;
+    object-fit: cover;
   }
   #Croissant{
     display: grid;
-    grid-template-columns: repeat(6, 300px);
+    grid-template-columns: repeat(6, 320px);
     gap: 30px;
     justify-content: left;
     overflow: scroll;
+    object-fit: cover;
     
   }
 
-  #Baguette{
+  #Eclair{
     display: grid;
-    grid-template-columns: repeat(6, 300px);
+    grid-template-columns: repeat(6, 320px);
     gap: 30px;
     justify-content: left;
     overflow: scroll;
+    object-fit: cover;
   }
   ::-webkit-scrollbar {
     width: 3px;
@@ -259,7 +262,6 @@
     border-radius: 4px;
     padding: 3px 6px;
   }
-  
   
   
   

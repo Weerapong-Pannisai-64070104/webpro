@@ -1,8 +1,10 @@
 let bakery1 = document.getElementById("Bread");
 let bakery2 = document.getElementById("Croissant");
-let bakery3 = document.getElementById("Baguette");
+let bakery3 = document.getElementById("Eclair");
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 let num = 0;
+
+
 
 function show(){
   if (num == 0){
@@ -44,16 +46,16 @@ let generatebread = () => {
       let search = basket.find((x) => x.id === id) || [];
       return `
       <div id=product-id-${id} class="item">
-        <a href="detail.html"><img width="100%" src=${img} id="${id}" name="${name}" value="${desc}"onclick="savedata(this)"></a>
+        <a href="detail.html"><img width="316.3 px" height="300px" style="object-fit:cover;" src=${img} id="${id}" name="${name}" value="${desc}"onclick="savedata(this)"></a>
         <div class="details">
           <h3>${name}</h3>
           <div class="price-quantity">
-            <h2>$ ${price} </h2>
+            <h2> ${price} Bath</h2>
             <div class="buttons">
               <div id=${id} class="quantity" style="display:none;">
               ${search.item === undefined ? 0 : search.item}
               </div>
-              <i class="btn btn-primary" onclick="increment(${id})" class="bi bi-plus-lg">add to cart</i>
+              <i class="btn"style="background-color:#5c4b44; color:white;" onclick="increment(${id})" class="bi bi-plus-lg">add to cart</i>
             </div>
           </div>
         </div>
@@ -71,16 +73,16 @@ let generatecroissant = () => {
       let search = basket.find((x) => x.id === id) || [];
       return `
       <div id=product-id-${id} class="item">
-        <a href="detail.html"><img width="100%" src=${img} id="${id}" name="${name}" value="${desc}"onclick="savedata(this)"></a>
+        <a href="detail.html"><img width="316.3 px" height="300px" style="object-fit:cover;"  src=${img} id="${id}" name="${name}" value="${desc}"onclick="savedata(this)"></a>
         <div class="details">
           <h3>${name}</h3>
           <div class="price-quantity">
-            <h2>$ ${price} </h2>
+            <h2> ${price} Bath</h2>
             <div class="buttons">
               <div id=${id} class="quantity" style="display:none;">
               ${search.item === undefined ? 0 : search.item}
               </div>
-              <i class="btn btn-primary" onclick="increment(${id})" class="bi bi-plus-lg">add to cart</i>
+              <i class="btn"style="background-color:#5c4b44; color:white;" onclick="increment(${id})" class="bi bi-plus-lg">add to cart</i>
             </div>
           </div>
         </div>
@@ -90,23 +92,23 @@ let generatecroissant = () => {
     .join(""));
 };
 
-  let generatebaguette = () => {
-    return (bakery3.innerHTML = Baguette
+  let generateeclair = () => {
+    return (bakery3.innerHTML = Eclair
       .map((x) => {
         let { id, name, price, desc, img } = x;
         let search = basket.find((x) => x.id === id) || [];
         return `
         <div id=product-id-${id} class="item">
-          <a href="detail.html"><img width="100%" src=${img} id="${id}" name="${name}" value="${desc}"onclick="savedata(this)"></a>
+          <a href="detail.html"><img width="316.3 px" height="300px" style="object-fit:cover;" src=${img} id="${id}" name="${name}" value="${desc}"onclick="savedata(this)"></a>
           <div class="details">
             <h3>${name}</h3>
             <div class="price-quantity">
-              <h2>$ ${price} </h2>
+              <h2> ${price} Bath</h2>
               <div class="buttons">
                 <div id=${id} class="quantity" style="display:none;">
                 ${search.item === undefined ? 0 : search.item}
                 </div>
-                <i class="btn btn-primary" onclick="increment(${id})" class="bi bi-plus-lg">add to cart</i>
+                <i class="btn" style="background-color:#5c4b44; color:white;"onclick="increment(${id})" class="bi bi-plus-lg">add to cart</i>
               </div>
             </div>
           </div>
@@ -118,7 +120,7 @@ let generatecroissant = () => {
 
 generatebread();
 generatecroissant();
-generatebaguette();
+generateeclair();
 
 let increment = (id) => {
   let selectedItem = id;
@@ -151,3 +153,4 @@ let calculation = () => {
 };
 
 calculation();
+
